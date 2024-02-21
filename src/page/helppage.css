@@ -1,0 +1,15 @@
+.hm__help__page__h2 {
+  max-width: 261px;
+  width: 100%;
+}
+.hm__help__page__p {
+  max-width: 349px;
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .hm__help__page__p {
+    max-width: 289px;
+    width: 100%;
+  }
+}
