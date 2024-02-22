@@ -5,14 +5,14 @@ import Footer from "../components/Footer";
 function RootLayout() {
   return (
     <>
-      <header className="bg-[#101010]">
+      <header className="bg-[#101010] scroll-auto">
         <Navbar />
       </header>
       {/* iltimos main tagiga max-container clasini yozmang sayt buzilishi mumkun ! */}
-      <main className="grow">
+      <main className="grow scroll-auto">
         <Outlet />
       </main>
-      <footer className="bg-[#101010] pt-[52px] pb-[38px]">
+      <footer className="bg-[#101010] pt-[52px] pb-[38px] scroll-auto">
         <Footer />
       </footer>
     </>

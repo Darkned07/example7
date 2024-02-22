@@ -1,7 +1,7 @@
 import "./comphelp.css";
 import { Link } from "react-router-dom";
 
-function NavItem({ ispending }) {
+function NavItem() {
   return (
     <div className="bg-[#101010] pb-[50px]">
       <div className="help__post  max-container  flex flex-col items-center justify-center md:flex-row-reverse md:justify-between md:item-center">

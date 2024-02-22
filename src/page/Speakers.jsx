@@ -3,28 +3,26 @@ import Ucat from "../components/Ucat";
 import ImComp from "../components/ImComp";
 import CatList from "../components/CatList";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { filter } from "../redux/features/slices/shopSlice";
 
 function Speakers() {
+  const dispatch = useDispatch();
   const text = "speakers";
   const [doc, setDoc] = useState(null);
-
-  useEffect(() => {
-    const getData = async (text) => {
-      fetch("http://localhost:3000/data?category=" + text)
-        .then((data) => data.json())
-        .then((doc) => setDoc(doc))
-        .catch((error) => console.log(error));
-    };
-    getData(text);
-  }, [text]);
+  const [d, setD] = useState(false);
+  setTimeout(() => {
+    setD(true);
+  }, 2000);
+  dispatch(filter(text));
 
   return (
     <div>
       <NavHelpCat text={text} />
       <div className="max-container flex flex-col gap-[60px]">
         <div className="mt-[60px] mb-[60px]">
-          {doc && <CatList doc={doc} />}
-          {!doc && (
+          {d && <CatList />}
+          {!d && (
             <div className="flex items-center justify-center">
               <h2 className="flex justify-center items-center text-[20px] sm:text-[30px]">
                 Loading

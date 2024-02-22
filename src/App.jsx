@@ -18,6 +18,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase/firebaseConfig";
 import { isAuthReady, login } from "./redux/features/auth/authSlice";
+import Checkout from "./page/Checkout";
 function App() {
   const [us, setUs] = useState(false);
   const dispatch = useDispatch();
@@ -54,6 +55,10 @@ function App() {
         {
           path: "/product/:slug",
           element: <ProductSlug />,
+        },
+        {
+          path: "/check",
+          element: <Checkout />,
         },
       ],
     },

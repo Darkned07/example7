@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function CatList({ doc, error }) {
+function CatList() {
+  const { filters } = useSelector((store) => store.shop);
   return (
     <ul className="flex flex-col-reverse gap-[30px]">
-      {doc &&
-        doc.map((d) => {
+      {filters &&
+        filters.map((d) => {
           return (
             <li
               key={d.id}
@@ -45,6 +47,11 @@ function CatList({ doc, error }) {
             </li>
           );
         })}
+      {!filters && (
+        <div className="flex items-center justify-center">
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>
+      )}
     </ul>
   );
 }

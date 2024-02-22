@@ -3,8 +3,11 @@ import ImComp from "../components/ImComp";
 import NavItem from "../components/NavItem";
 import Ucat from "../components/Ucat";
 import "./helppage.css";
+import { useApi } from "../hooks/useApi";
 
 function Home() {
+  const { useFetch } = useApi();
+  useFetch("http://localhost:3000/data");
   return (
     <div>
       <NavItem />
@@ -14,8 +17,8 @@ function Home() {
           <div className="py-[120px]">
             <Ucat />
           </div>
-          <div className="bg-[#D87D4A] mb-[60px] pt-[60px] rounded-[8px] md:px-[85px] px-[10px] flex flex-col md:flex-row items-center md:justify-between  justify-center">
-            <picture>
+          <div className="bg-[#D87D4A] mb-[60px] pt-[60px] rounded-[8px] md:px-[85px] px-[10px] flex flex-col md:flex-row items-center md:justify-between  justify-center overflow-hidden">
+            <picture className="mb-[-20px]">
               <source
                 media="(max-width:768px)"
                 srcSet="/assets/home/tablet/image-speaker-zx9.png"
