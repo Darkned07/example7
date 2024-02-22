@@ -15,6 +15,7 @@ function Earphones() {
   const dispatch = useDispatch();
   const text = "earphones";
   dispatch(filter(text));
+  toast.success("Earphones Pages close menu!");
 
   return (
     <div>

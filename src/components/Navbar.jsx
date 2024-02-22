@@ -11,6 +11,7 @@ import {
   delAll,
 } from "../redux/features/slices/shopSlice";
 import { useState } from "react";
+import HomeModal from "./HomeModal";
 
 function Navbar() {
   const [isPen, setIsPen] = useState(false);
@@ -30,9 +31,22 @@ function Navbar() {
   return (
     <div className="max-container border border-t-0 border-x-0 border-white border-[100%] ">
       <div className="py-[32px] flex flex-row justify-between items-center">
-        <button className="text-[#ffffff] w-[16px] h-[12px] font-bold sm:mr-[40px] md:hidden">
+        <a
+          href="#my_modal_8"
+          className="text-[#ffffff] w-[16px] h-[12px] font-bold sm:mr-[40px] md:hidden"
+        >
           <FiMenu />
-        </button>
+        </a>
+        <div className="modal" role="dialog" id="my_modal_8">
+          <div className="modal-box">
+            <HomeModal />
+            <div className="modal-action">
+              <a href="#" className="btn">
+                close!
+              </a>
+            </div>
+          </div>
+        </div>
 
         <Link className="sm:mr-[auto] md:mr-[1px]" to="/">
           <img

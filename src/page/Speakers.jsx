@@ -5,6 +5,7 @@ import CatList from "../components/CatList";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { filter } from "../redux/features/slices/shopSlice";
+import { toast } from "react-toastify";
 
 function Speakers() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function Speakers() {
     setD(true);
   }, 2000);
   dispatch(filter(text));
+  toast.success("Speakers Pages close menu!");
 
   return (
     <div>
@@ -22,6 +24,7 @@ function Speakers() {
       <div className="max-container flex flex-col gap-[60px]">
         <div className="mt-[60px] mb-[60px]">
           {d && <CatList />}
+
           {!d && (
             <div className="flex items-center justify-center">
               <h2 className="flex justify-center items-center text-[20px] sm:text-[30px]">

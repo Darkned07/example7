@@ -5,6 +5,7 @@ import ImComp from "../components/ImComp";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { filter } from "../redux/features/slices/shopSlice";
+import { toast } from "react-toastify";
 
 function HeadPhone() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function HeadPhone() {
     setD(true);
   }, 2000);
   dispatch(filter(text));
+  toast.success("Headphones Pages close menu!");
 
   return (
     <div className="">
@@ -22,6 +24,7 @@ function HeadPhone() {
       <div className="max-container flex flex-col gap-[60px]">
         <div className="mt-[60px] mb-[60px]">
           {d && <CatList />}
+
           {!d && (
             <div className="flex items-center justify-center">
               <h2 className="flex justify-center items-center text-[20px] sm:text-[30px]">
